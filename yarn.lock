@@ -5615,11 +5615,6 @@ webpack-cli@^3.3.10:
     v8-compile-cache "2.0.3"
     yargs "13.2.4"
 
-webpack-extract-translation-keys-plugin@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/webpack-extract-translation-keys-plugin/-/webpack-extract-translation-keys-plugin-5.0.2.tgz#fcb90a8a49b92928996e9e2484f7d0ce53bcee89"
-  integrity sha512-q0rovMKVnmDER2wQnjVJ4ts0lvhGU26FVQcOUCi4fgUH3ex5Pl5Ry9+2X0ikLQ0xOcq1DxcI2TU4tHOFZ70W+w==
-
 webpack-sources@^1.1.0, webpack-sources@^1.4.0, webpack-sources@^1.4.1:
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-1.4.3.tgz#eedd8ec0b928fbf1cbfe994e22d2d890f330a933"
