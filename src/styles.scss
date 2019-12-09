@@ -1,0 +1,38 @@
+@function capitalize($string) {
+  @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
+}
+
+$sizes: (
+  'auto': auto,
+  'none': none,
+  'zero': 0,
+  'xxs': 4px,
+  'xs': 8px,
+  's': 12px,
+  'm': 16px,
+  'l': 24px,
+  'xl': 40px,
+  'xxl': 60px,
+);
+
+$directions: left, right, top, bottom;
+
+@each $key, $value in $sizes {
+  .margin_#{$key} {
+    margin: map-get($sizes, $key);
+  }
+
+  .padding_#{$key} {
+    padding: map-get($sizes, $key);
+  }
+
+  @each $direction in $directions {
+    .margin#{capitalize($direction)}_#{$key} {
+      margin-#{$direction}: map-get($sizes, $key);
+    }
+
+    .padding#{capitalize($direction)}_#{$key} {
+      padding-#{$direction}: map-get($sizes, $key);
+    }
+  }
+}

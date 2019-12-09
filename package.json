@@ -3,32 +3,30 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "author": "Mark Murray <mark.murray.ie@gmail.com> (https://markmurray.co)",
   "scripts": {
     "build": "rm -rf dist && webpack"
   },
-  "sideEffects": [
-    "./index.js",
-    "./styles.css"
-  ],
   "dependencies": {
+    "classnames": "^2.2.6",
+    "react": "^16.12.0"
+  },
+  "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
     "@babel/preset-react": "^7.7.4",
     "babel-loader": "^8.0.6",
-    "babel-plugin-react-css-modules": "^5.2.6",
+    "@fullhuman/postcss-purgecss": "^1.3.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-extract-translation-keys-plugin": "^5.0.2",
     "css-loader": "^3.2.1",
     "cssnano": "^4.1.10",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
     "postcss-loader": "^3.0.0",
     "postcss-scss": "^2.0.0",
-    "purgecss-webpack-plugin": "^1.6.0",
-    "react": "^16.12.0",
-    "react-css-modules": "^4.7.11",
-    "sass-loader": "^8.0.0",
-    "style-loader": "^1.0.1",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-extract-translation-keys-plugin": "^5.0.2"
   }
 }
