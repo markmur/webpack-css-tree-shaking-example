@@ -1,5 +1,5 @@
 {
-  "name": "tree-shaking-test",
+  "name": "webpack-css-tree-shaking-example",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
