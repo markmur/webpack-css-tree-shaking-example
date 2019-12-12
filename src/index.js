@@ -1,14 +1,19 @@
-import React from 'react'
-import cx from 'classnames'
+import React from "react";
+import { render } from "react-dom";
+import cx from "classnames";
 
-import { paddingRight_l, margin_xs } from './styles.scss'
+import styles from "./styles.scss";
+
+const BASE_CLASS = "app";
+
+console.log(styles);
 
 const App = () => {
   return (
-    <div className={cx(margin_xs, paddingRight_l)}>
-      Text with margin around it
+    <div className={cx(styles.margin_xs, styles.paddingRight_l)}>
+      <span>main Text with margin around it</span>
     </div>
-  )
-}
+  );
+};
 
-export default App
+render(<App />, document.getElementById("app"));

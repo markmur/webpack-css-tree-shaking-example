@@ -1,33 +1,33 @@
 /* eslint-env node */
 
-const path = require('path')
-const glob = require('glob')
-const webpack = require('webpack')
+const path = require("path");
+const glob = require("glob");
+const webpack = require("webpack");
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const entry = filename => [path.resolve(__dirname, filename)]
+const entry = filename => [path.resolve(__dirname, filename)];
 
 module.exports = {
-  mode: 'production',
+  mode: "production",
 
-  entry: entry('src/index.js'),
+  entry: entry("src/index.js"),
 
   output: {
-    filename: '[name].js',
-    path: path.resolve('dist'),
+    filename: "[name].js",
+    path: path.resolve("dist")
   },
 
   resolve: {
-    extensions: ['.js'],
+    extensions: [".js"]
   },
 
   module: {
     rules: [
       {
         test: /\.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
+        loader: "babel-loader",
+        exclude: /node_modules/
       },
       {
         test: /\.s?css$/,
@@ -35,25 +35,25 @@ module.exports = {
         use: [
           // Extract the css to file
           MiniCssExtractPlugin.loader,
-          { 
-            loader: require.resolve('css-loader'), 
-            options: { 
+          {
+            loader: require.resolve("css-loader"),
+            options: {
               // Enable CSS modules
               modules: {
                 // Specify format of class names
-                localIdentName: '[local]_[hash:base64:5]'
-              },
-            } 
+                localIdentName: "[local]_[hash:base64:5]"
+              }
+            }
           },
           {
-            loader: require.resolve('postcss-loader'),
+            loader: require.resolve("postcss-loader"),
             options: {
-              indent: 'postcss',
-              syntax: 'postcss-scss',
+              indent: "postcss",
+              syntax: "postcss-scss",
               plugins: () => [
                 // Purge unused CSS
-                require('@fullhuman/postcss-purgecss')({
-                  content: glob.sync('src/**/*.{js,jsx}', { nodir: true }),
+                require("@fullhuman/postcss-purgecss")({
+                  content: glob.sync("src/**/*.{js,jsx}", { nodir: true }),
                   extractors: [
                     {
                       extractor: class {
@@ -62,23 +62,23 @@ module.exports = {
                           return content.match(/\w+/g) || [];
                         }
                       },
-                      extensions: ['js', 'jsx' ]
+                      extensions: ["js", "jsx"]
                     }
                   ]
                 }),
-                require('cssnano')
+                require("cssnano")
               ]
             }
           },
-          require.resolve('sass-loader')
-        ],
-      },
-    ],
+          require.resolve("sass-loader")
+        ]
+      }
+    ]
   },
   plugins: [
     // Extract all css into a separate file
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-    }),
-  ],
-}
+      filename: "[name].css"
+    })
+  ]
+};

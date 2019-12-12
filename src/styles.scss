@@ -3,16 +3,16 @@
 }
 
 $sizes: (
-  'auto': auto,
-  'none': none,
-  'zero': 0,
-  'xxs': 4px,
-  'xs': 8px,
-  's': 12px,
-  'm': 16px,
-  'l': 24px,
-  'xl': 40px,
-  'xxl': 60px,
+  "auto": auto,
+  "none": none,
+  "zero": 0,
+  "xxs": 4px,
+  "xs": 8px,
+  "s": 12px,
+  "m": 16px,
+  "l": 24px,
+  "xl": 40px,
+  "xxl": 60px
 );
 
 $directions: left, right, top, bottom;
@@ -35,4 +35,8 @@ $directions: left, right, top, bottom;
       padding-#{$direction}: map-get($sizes, $key);
     }
   }
+}
+
+.main {
+  background: blue;
 }
